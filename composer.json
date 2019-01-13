@@ -1,17 +1,22 @@
 {
-	"description": "The CodeIgniter framework",
-	"name": "codeigniter/framework",
+	"description": "Web Kliping Digital",
+	"name": "khazefa/amb",
 	"type": "project",
-	"homepage": "https://codeigniter.com",
+	"homepage": "https://domain.com",
 	"license": "MIT",
+	"authors": [
+	  {
+		"name": "Sigit Prayitno",
+		"email": "hello@digifreneur.com"
+	  }
+	],
 	"support": {
-		"forum": "http://forum.codeigniter.com/",
-		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
-		"slack": "https://codeigniterchat.slack.com",
-		"source": "https://github.com/bcit-ci/CodeIgniter"
+		"issues": "https://github.com/khazefa/amb/issues"
 	},
 	"require": {
-		"php": ">=5.3.7"
+		"php": ">=7.2",
+	  	"composer/installers": "1.*",
+	  	"bower-asset/jquery": ">=1.9.0 <4.0.0"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
