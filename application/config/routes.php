@@ -52,3 +52,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//$route['default_controller'] = 'frontend/home';
+//$route['404_override'] = 'errors/index';
+$route['translate_uri_dashes'] = FALSE;
+$route['/']['GET'] = function() {
+	return 'frontend/home';
+};
+$route['read/(:any)']['GET'] = function($slug) {
+	return 'frontend/home/read/' . $slug;
+};
+/*-----------------------------ADMIN PAGE---------------------------------------*/
+//sign In
+$route['backend']['get'] = function() {
+	return 'backend/signin/index';
+};
+//do sign in
+$route['backend']['post'] = function() {
+	return 'backend/signin/check';
+};
+//logout
+$route['backend/signout']['get'] = function() {
+	return 'backend/signin/signout';
+};
+//list posts
+$route['backend/post']['GET'] = function() {
+	return 'backend/post/index';
+};
+//create post
+$route['backend/post/create_post']['GET'] = function() {
+	return 'backend/post/create_post';
+};
+//save post
+$route['backend/post/save_post']['POST'] = function() {
+	return 'backend/post/savePost';
+};
+//publish post
+$route['backend/post/publish']['POST'] = function() {
+	return 'backend/post/publish';
+};
+// Set feautered
+$route['backend/post/unPublish']['POST'] = function() {
+	return 'backend/post/unPublish';
+};
+//edit post
+$route['backend/post/edit/(:any)']['GET'] = function($article_id) {
+	return 'backend/post/edit/' . $article_id;
+};
+// save_edit_post
+$route['backend/post/save_edit_post/(:any)']['POST'] = function($article_id) {
+	return 'backend/post/updatePost/' . $article_id;
+};
+//erros -------------------------------------------------------
+$route['errors/not_found']['GET'] = function() {
+	return 'errors/index';
+};
