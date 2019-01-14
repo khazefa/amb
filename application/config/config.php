@@ -37,7 +37,7 @@ $config['base_url'] .=   str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERV
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -225,7 +225,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -326,7 +326,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'GUY678adga7^Bw1!546&*GS5nF|V)PaOexfjM<:e*9RBc@1tRVsgAHSBVZT@Ozhc^w!4Uluyvts7c65410y[20;cr*(&@*&$#AIUSTb';
+$config['encryption_key'] = 'GUY678adga7^Bw1!546';
 
 /*
 |--------------------------------------------------------------------------
