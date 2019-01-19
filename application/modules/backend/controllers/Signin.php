@@ -58,12 +58,12 @@ class Signin extends Front_Controller
 	public function check()
 	{
 		$input = $this->input->post(null, true);
-		$email = element('email', $input);
+		$username = element('username', $input);
 		$password = element('password', $input);
 		$sessionArray = array();
 
-		if ($email && $password) {
-			$result = $this->MLog->auth_me($email, $password);
+		if ($username && $password) {
+			$result = $this->MLog->auth_default($username, $password);
 
 			if(count($result) > 0)
 			{
