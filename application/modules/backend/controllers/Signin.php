@@ -14,6 +14,7 @@ class Signin extends Front_Controller
 		$this->refreshCache();
 		//load session library
 		$this->load->library('session');
+		$this->load->helper('captcha');
 		$this->load->model('backend/Auth_model','MLog');
 	}
 
@@ -33,6 +34,10 @@ class Signin extends Front_Controller
 		header("Pragma: no-cache");
 	}
 
+	public function ui_captcha(){
+
+	}
+
 	/**
 	 * Show Login interface
 	 */
@@ -43,9 +48,13 @@ class Signin extends Front_Controller
 			redirect('/backend/post');
 			exit;
 		}
-		$data = [
-			//anything here
-		];
+		// load the BotDetect Captcha library and set its parameter
+		$this->load->library('botdetect/BotDetectSimpleCaptcha', array(
+			'captchaStyleName' => 'ExampleCaptcha'
+		));
+		// make Captcha Html accessible to View code
+		$data['captchaHtml'] = $this->botdetectsimplecaptcha->Html();
+
 		$this->digiView($data, 'layouts/backend/signin');
 	}
 

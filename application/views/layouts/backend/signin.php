@@ -48,6 +48,10 @@
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
 			<div class="row">
+				<label for="CaptchaCode">Please retype the characters from the image:</label>
+				<?php echo $captchaHtml; ?>
+				<input type="text" name="CaptchaCode" id="CaptchaCode" value="" size="50" />
+				
 				<div class="col-xs-8">
 					<div class="checkbox icheck">
 						<label>
