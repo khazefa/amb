@@ -19,38 +19,22 @@ class MY_Controller extends MX_Controller
 	 */
 	public function digiLayout($data = [], $view = null)
 	{
-		if (ENVIRONMENT === 'production') {
-			$this->load->view('layouts/frontend/header-min', $data);
-			if ($view) {
-				$this->load->view($view . '-min');
-			}
-			$this->load->view('layouts/frontend/footer-min');
-		} else {
-			$this->load->view('layouts/frontend/header', $data);
-			if ($view) {
-				$this->load->view($view);
-			}
-			$this->load->view('layouts/frontend/footer');
+		$this->load->view('layouts/frontend/header', $data);
+		if ($view) {
+			$this->load->view($view);
 		}
+		$this->load->view('layouts/frontend/footer');
 	}
 	/**
 	 * Layouting for Backend
 	 */
 	public function digiAdminLayout($data = [], $view = null)
 	{
-		if (ENVIRONMENT === 'production') {
-			$this->load->view('layouts/backend/header-min', $data);
-			if ($view) {
-				$this->load->view($view . '-min');
-			}
-			$this->load->view('layouts/backend/footer-min');
-		} else {
-			$this->load->view('layouts/backend/header', $data);
-			if ($view) {
-				$this->load->view($view);
-			}
-			$this->load->view('layouts/backend/footer');
+		$this->load->view('layouts/backend/header', $data);
+		if ($view) {
+			$this->load->view($view);
 		}
+		$this->load->view('layouts/backend/footer');
 	}
 	/**
 	 * Load a single View
@@ -58,11 +42,7 @@ class MY_Controller extends MX_Controller
 	public function digiView($data = [], $view = null)
 	{
 		if ($view) {
-			if (ENVIRONMENT === 'production') {
-				$this->load->view($view . '-min');
-			} else {
-				$this->load->view($view);
-			}
+			$this->load->view($view);
 		}
 	}
 }
