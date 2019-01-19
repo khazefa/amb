@@ -14,7 +14,9 @@ class Signin extends Front_Controller
 		$this->refreshCache();
 		//load session library
 		$this->load->library('session');
+		$this->load->model('backend/Auth_model','MLog');
 	}
+
 	/**
 	 * On browser back button hit
 	 * force to pre-Check
@@ -30,6 +32,7 @@ class Signin extends Front_Controller
 		// HTTP/1.0
 		header("Pragma: no-cache");
 	}
+
 	/**
 	 * Show Login interface
 	 */
@@ -45,6 +48,7 @@ class Signin extends Front_Controller
 		];
 		$this->digiView($data, 'layouts/backend/signin');
 	}
+
 	/**
 	 * verify Login
 	 *
@@ -56,42 +60,45 @@ class Signin extends Front_Controller
 		$input = $this->input->post(null, true);
 		$email = element('email', $input);
 		$password = element('password', $input);
+		$sessionArray = array();
+
 		if ($email && $password) {
-			$user = $this->db->select('*')
-				->from('admin')->where('adminemail', $email)
-				->get()->row_array();
-			if ($user) {
-				if(md5($password) == $user['adminpassword']) {
-					$user['logged_in'] = true;
-					$this->session->set_userdata($user);
-					redirect('/backend/post');
-				} else {
-					$this->_login_fail();
+			$result = $this->MLog->auth_me($email, $password);
+
+			if(count($result) > 0)
+			{
+				foreach ($result as $res)
+				{
+					$sessionArray = array(
+						'accKey' => $res->adminname,
+						'accEmail' => $res->adminemail,
+						'accName' => $res->adminrealname,
+						'accKat' => $res->adminkat,
+						'accType' => $res->admintipe,
+						'accGroup' => $res->admingroup,
+						'accRole' => $res->adminrole,
+						'logged_in' => TRUE
+					);
 				}
-			} else {
+				$this->session->set_userdata($sessionArray);
+				redirect('/backend/post');
+			}else{
 				$this->_login_fail();
 			}
 		} else {
 			$this->_login_fail();
 		}
 	}
+
 	/**
-	 * On Login faild
+	 * On Login failed
 	 */
 	private function _login_fail()
 	{
-		$this->session->set_flashdata('error_login', 'Incorrect username or Password');
+		setFlashData('error_login', 'Incorrect username or Password');
 		redirect('/backend', true);
 	}
-	/**
-	 * Just for initial login user
-	 * change it to public to see generated password
-	 * and where you re done, set it to private again
-	 */
-	private function generate_pass()
-	{
-		echo password_hash('admin', PASSWORD_BCRYPT);
-	}
+
 	/**
 	 * Sign out
 	 */
