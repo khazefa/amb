@@ -8,6 +8,16 @@
 
 class Back_Controller extends MY_Controller
 {
+	protected $accKey = '';
+	protected $accEmail = '';
+	protected $accName = '';
+	protected $accKat = '';
+	protected $accType = '';
+	protected $accGroup = '';
+	protected $accRole = '';
+
+	protected $global = array ();
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -34,5 +44,28 @@ class Back_Controller extends MY_Controller
 		// HTTP/1.0
 		header("Pragma: no-cache");
 	}
-	//just in case you need to add something here
+
+	/**
+	 * This function used to check the user is logged in or not
+	 */
+	function isLoggedIn() {
+		$isSessionFilled = $this->session->userdata ( 'logged_in' );
+
+		if (! isset ( $isSessionFilled ) || $isSessionFilled != TRUE) {
+			redirect ( '/backend' );
+		} else {
+			$this->accKey = $this->session->userdata ( 'accKey' );
+			$this->accName = $this->session->userdata ( 'accName' );
+			$this->accEmail = $this->session->userdata ( 'accEmail' );
+			$this->accGroup = $this->session->userdata ( 'accGroup' );
+			$this->accKat = $this->session->userdata ( 'accKat' );
+			$this->accRole = $this->session->userdata ( 'accRole' );
+			$this->accType = $this->session->userdata ( 'accType' );
+
+			$this->global ['name'] = $this->accName;
+			$this->global ['type'] = $this->accType;
+			$this->global ['group'] = $this->accGroup;
+			$this->global ['role'] = $this->accRole;
+		}
+	}
 }
