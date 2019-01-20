@@ -25,7 +25,7 @@ $config['frontend'] = constant('master');
 $config['backend'] = constant('master')."/backend/";
 
 // User photo uploads directory -> use in User.php
-$config['uploads'] = constant('master').'uploads/';
+$config['upload_path'] = constant('master').'uploads/';
 
 // Endpoint for user basic info -> use in oauth/Resource.php
 $config['user_info'] = constant('master').'user/info';
