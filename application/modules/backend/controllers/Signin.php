@@ -33,10 +33,6 @@ class Signin extends Front_Controller
 		header("Pragma: no-cache");
 	}
 
-	public function ui_captcha(){
-
-	}
-
 	/**
 	 * Show Login interface
 	 */
@@ -129,6 +125,51 @@ class Signin extends Front_Controller
 	{
 		setFlashData('error_login', $msg);
 		redirect('/backend', true);
+	}
+
+	public function forgot_password(){
+		$input = $this->input->post(null, true);
+		$email = element('email_forgot', $input);
+
+		if($this->MLog->check_email_exist($email)){
+			$encoded_email = urlencode($email);
+
+			$data['email'] = $email;
+			$data['activation_id'] = generateRandomString(15);
+			$data['created_at'] = date('Y-m-d H:i:s');
+			$data['agent'] = getBrowserAgent();
+			$data['client_ip'] = $this->input->ip_address();
+
+			$save = $this->MLog->reset_password_user($data);
+
+			if($save)
+			{
+				$data1['reset_link'] = $this->config->item('frontend') . "reset_pass_confirm/" . $data['activation_id'] . "/" . $encoded_email;
+				$userInfo = $this->MLog->get_info_by_email($email);
+
+				if(!empty($userInfo)){
+					$data1["name"] = $userInfo[0]->user_fullname;
+					$data1["email"] = $userInfo[0]->user_email;
+					$data1["message"] = "Reset Your Password";
+				}
+
+				$sendStatus = resetPasswordEmail($data1);
+
+				if($sendStatus){
+					$this->response([
+						'status' => TRUE,
+						'message' => 'Reset password link sent successfully, please check your email.'
+					], REST_Controller::HTTP_OK);
+				} else {
+					$this->response([
+						'status' => FALSE,
+						'message' => 'Email has been failed, try again.'
+					], REST_Controller::HTTP_OK);
+				}
+			}
+		}
+
+		setFlashData('error_forgot', '');
 	}
 
 	/**
