@@ -140,6 +140,7 @@
 			<ul class="sidebar-menu" data-widget="tree">
 				<li class="header">MAIN NAVIGATION</li>
 				<li><a href="<?= base_url('backend/dashboard');?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+				<!--
 				<li class="treeview">
 					<a href="#">
 						<i class="fa fa-share"></i> <span>Multilevel</span>
@@ -173,6 +174,7 @@
 						<li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
 					</ul>
 				</li>
+				-->
 				<li><a href="#" data-toggle="modal" data-target=".modal-change-password"><i class="fa fa-key"></i> <span>Change Password</span></a></li>
 				<li class="header">LABELS</li>
 				<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
