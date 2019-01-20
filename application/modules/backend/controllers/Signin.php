@@ -40,7 +40,7 @@ class Signin extends Front_Controller
 	{
 		//check for login status
 		if ($this->session->userdata('logged_in')) {
-			redirect('/backend/post');
+			redirect('/backend/dashboard');
 			exit;
 		}
 
