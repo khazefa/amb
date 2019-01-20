@@ -53,7 +53,6 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['botdetect/simple-captcha-handler'] = 'botdetect/simple_captcha_handler/index';
 //$route['default_controller'] = 'frontend/home';
 //$route['404_override'] = 'errors/index';
 $route['translate_uri_dashes'] = FALSE;
