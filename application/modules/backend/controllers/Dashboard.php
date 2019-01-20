@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * Class Dashboard.php.
- * Desc: Dashboard of the application
+ * Desc: Dashboard of the backend
  * @author: Sigit Prayitno
  * @email: cybergitt@gmail.com
  */
