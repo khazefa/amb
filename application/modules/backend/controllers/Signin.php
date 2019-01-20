@@ -105,7 +105,7 @@ class Signin extends Front_Controller
 						);
 					}
 					$this->session->set_userdata($sessionArray);
-					redirect('/backend/post');
+					redirect('/backend/dashboard');
 				}else{
 					$this->_login_fail("Incorrect username or Password");
 				}
