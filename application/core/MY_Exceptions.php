@@ -18,19 +18,19 @@ class MY_Exceptions extends CI_Exceptions
 	//render layout
 	private function _digiLayout($data = [], $view = null)
 	{
-		if (ENVIRONMENT === 'production') {
-			$this->CI->load->view('layouts/frontend/header-min', $data);
-			if ($view) {
-				$this->CI->load->view($view . '-min');
-			}
-			$this->CI->load->view('layouts/frontend/footer-min');
-		} else {
+//		if (ENVIRONMENT === 'production') {
+//			$this->CI->load->view('layouts/frontend/header-min', $data);
+//			if ($view) {
+//				$this->CI->load->view($view . '-min');
+//			}
+//			$this->CI->load->view('layouts/frontend/footer-min');
+//		} else {
 			$this->CI->load->view('layouts/frontend/header', $data);
 			if ($view) {
 				$this->CI->load->view($view);
 			}
 			$this->CI->load->view('layouts/frontend/footer');
-		}
+//		}
 	}
 	/**
 	 * 404 Page Not Found Handler

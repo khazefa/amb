@@ -84,7 +84,7 @@ if(!function_exists('setProtocol'))
 {
 	function setProtocol()
 	{
-		$CI = &get_instance();
+		$CI =& get_instance();
 
 		$CI->load->library('email');
 
@@ -108,7 +108,7 @@ if(!function_exists('emailConfig'))
 {
 	function emailConfig()
 	{
-		$CI = &get_instance();
+		$CI =& get_instance();
 		$CI->load->library('email');
 		$config['protocol'] = PROTOCOL;
 		$config['smtp_host'] = SMTP_HOST;
@@ -125,10 +125,7 @@ if(!function_exists('resetPasswordEmail'))
 {
 	function resetPasswordEmail($detail)
 	{
-		$data["data"] = $detail;
-		// pre($detail);
-		// die;
-
+		$data["company"] = "";
 		$CI = setProtocol();
 
 		$CI->email->from(EMAIL_FROM, FROM_NAME);
@@ -145,7 +142,7 @@ if(!function_exists('setFlashData'))
 {
 	function setFlashData($status, $flashMsg)
 	{
-		$CI = get_instance();
+		$CI =& get_instance();
 		$CI->session->set_flashdata($status, $flashMsg);
 	}
 }

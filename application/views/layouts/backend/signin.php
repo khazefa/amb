@@ -93,10 +93,8 @@
 				<h4 class="modal-title">Lupa kata sandi Anda?</h4>
 			</div>
 			<div class="modal-body">
-				<p>
-					<?= empty($this->session->flashdata('error_forgot')) ?
-						'Input email Anda. Kami akan mengirimkan instruksi bagaimana mereset kata sandi Anda ke email Anda.'
-						: '<span class="text-danger">'.$this->session->flashdata('error_forgot').'</span>'; ?>
+				<p id="forgot_msg">
+					Input email Anda. Kami akan mengirimkan instruksi bagaimana mereset kata sandi Anda ke email Anda.
 				</p>
 				<div class="form-group has-feedback">
 					<input type="email" name="email_forgot" class="form-control" placeholder="Email" required="required">
@@ -146,8 +144,10 @@
 
 		var success = function (jqXHR) {
 			if(jqXHR.status === 0){
+				alert(jqXHR.message);
 				$('.modal-forgot-password').modal("hide");
 			}else{
+				alert(jqXHR.message);
 				$('.modal-forgot-password').modal("hide");
 			}
 		};

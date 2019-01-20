@@ -106,4 +106,43 @@ class Auth_model extends CI_Model
 		}
 	}
 
+	/**
+	 * This function is used to get customer information by email-id for forget password email
+	 * @param string $email : Email id of customer
+	 * @return object $result : Information of customer
+	 */
+	function get_info_by_email($email)
+	{
+		$this->db->select('adminname, adminemail, adminrealname');
+		$this->db->from('admin');
+		$this->db->where('adminemail', $email);
+		$this->db->where('adminactivated', 1);
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
+	/**
+	 * This function used to check correct activation deatails for forget password.
+	 * @param string $email : Email id of user
+	 * @param string $activation_id : This is activation string
+	 */
+	function check_activation_details($email, $activation_id)
+	{
+		$this->db->select('res_id');
+		$this->db->from('reset_password');
+		$this->db->where('email', $email);
+		$this->db->where('activation_id', $activation_id);
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+
+	// This function used to create new password by reset link
+	function create_password($email, $password)
+	{
+		$this->db->where('adminemail', $email);
+		$this->db->where('adminactivated', 1);
+		$this->db->update('admin', array('adminpassword'=>getHashedPassword($password)));
+		$this->db->delete('reset_password', array('email'=>$email));
+	}
 }
