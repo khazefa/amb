@@ -22,6 +22,8 @@
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<![endif]-->
 
 	<!-- Google Font -->
@@ -47,11 +49,19 @@
 				<input type="password" name="password" class="form-control" placeholder="Password" required="required">
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
+			<?php
+				if(is_localhost()){
+					// google recaptcha cannot be shown in localhost
+				}else {
+					?>
+					<div class="form-group has-feedback">
+						<div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
+					</div>
+					<?php
+				}
+			?>
 			<div class="row">
-				<label for="CaptchaCode">Please retype the characters from the image:</label>
-				<?php echo $captchaHtml; ?>
-				<input type="text" name="CaptchaCode" id="CaptchaCode" value="" size="50" />
-				
+				<!--
 				<div class="col-xs-8">
 					<div class="checkbox icheck">
 						<label>
@@ -59,6 +69,7 @@
 						</label>
 					</div>
 				</div>
+				-->
 				<!-- /.col -->
 				<div class="col-xs-4">
 					<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>

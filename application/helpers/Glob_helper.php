@@ -485,4 +485,21 @@ if ( ! function_exists('hitung_mundur'))
 	}
 }
 
+if ( ! function_exists('is_localhost'))
+{
+	function is_localhost()
+	{
+		$locallist = array(
+			'127.0.0.1',
+			'::1'
+		);
+
+		if(!in_array($_SERVER['REMOTE_ADDR'], $locallist)){
+			return FALSE;
+		}else{
+			return TRUE;
+		}
+	}
+}
+
 ?>

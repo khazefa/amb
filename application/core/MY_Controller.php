@@ -42,7 +42,7 @@ class MY_Controller extends MX_Controller
 	public function digiView($data = [], $view = null)
 	{
 		if ($view) {
-			$this->load->view($view);
+			$this->load->view($view, $data);
 		}
 	}
 }

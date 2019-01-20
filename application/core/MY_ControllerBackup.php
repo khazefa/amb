@@ -59,9 +59,9 @@ class MY_Controller extends MX_Controller
 	{
 		if ($view) {
 			if (ENVIRONMENT === 'production') {
-				$this->load->view($view . '-min');
+				$this->load->view($view . '-min', $data);
 			} else {
-				$this->load->view($view);
+				$this->load->view($view, $data);
 			}
 		}
 	}
