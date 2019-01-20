@@ -15,6 +15,12 @@ class UserAdmin extends Back_Controller
 		$this->load->model('backend/UserAdmin_model','MUser');
 	}
 
+	public function index()
+	{
+		redirect('/backend/dashboard');
+		exit;
+	}
+
 	// This function used to act to change the new password
 	public function change_new_password()
 	{
