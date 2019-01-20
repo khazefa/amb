@@ -91,6 +91,12 @@ $route['backend/change-password']['POST'] = function() {
 $route['backend/signout']['GET'] = function() {
 	return 'backend/signin/signout';
 };
+
+//dashboard
+$route['backend/dashboard']['GET'] = function() {
+	return 'backend/dashboard/index';
+};
+
 //list posts
 $route['backend/post']['GET'] = function() {
 	return 'backend/post/index';
