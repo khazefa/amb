@@ -71,6 +71,10 @@ $route['backend']['get'] = function() {
 $route['backend']['post'] = function() {
 	return 'backend/signin/check';
 };
+//forgot password
+$route['backend/forgot-password']['post'] = function() {
+	return 'backend/signin/forgot_password';
+};
 //logout
 $route['backend/signout']['get'] = function() {
 	return 'backend/signin/signout';
