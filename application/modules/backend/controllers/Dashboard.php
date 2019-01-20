@@ -13,11 +13,20 @@ class Dashboard extends Back_Controller
 		parent::__construct();
 		//load session library
 		$this->load->library('session');
+		$this->isLoggedIn();
 	}
 
 	public function index()
 	{
-		$data['pageTitle'] = "Dashboard";
-		$this->digiAdminLayout($data, 'backend/dashboard');
+		$this->global['pageTitle'] = 'Dashboard';
+		$this->global['contentHeader'] = 'Dashboard';
+		$this->global['contentTitle'] = 'Dashboard';
+		$this->global ['name'] = $this->accName;
+		$this->global ['type'] = $this->accType;
+		$this->global ['group'] = $this->accGroup;
+		$this->global ['role'] = $this->accRole;
+
+		$data = array();
+		$this->digiAdminLayout($data, 'backend/dashboard', $this->global);
 	}
 }
