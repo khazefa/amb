@@ -37,7 +37,7 @@
 	<!-- /.login-logo -->
 	<div class="login-box-body">
 		<p class="login-box-msg">
-			<?php echo empty($this->session->flashdata('error_login')) ? 'Sign in to start your session': '<span class="text-danger">'.$this->session->flashdata('error_login').'</span>'; ?>
+			<?= empty($this->session->flashdata('error_login')) ? 'Log In': '<span class="text-danger">'.$this->session->flashdata('error_login').'</span>'; ?>
 		</p>
 		<span></span>
 		<form action="<?php echo site_url('backend'); ?>" method="post">
@@ -78,12 +78,38 @@
 			</div>
 		</form>
 
-		<a href="#">I forgot my password</a><br>
+		<a href="#" data-toggle="modal" data-target=".modal-forgot-password">Lupa kata sandi?</a><br>
 
 	</div>
 	<!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
+
+<div class="modal fade modal-forgot-password" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Lupa kata sandi Anda?</h4>
+			</div>
+			<div class="modal-body">
+				<p>
+					<?= empty($this->session->flashdata('error_forgot')) ?
+						'Input email Anda. Kami akan mengirimkan instruksi bagaimana mereset kata sandi Anda ke email Anda.'
+						: '<span class="text-danger">'.$this->session->flashdata('error_forgot').'</span>'; ?>
+				</p>
+				<div class="form-group has-feedback">
+					<input type="email" name="email_forgot" class="form-control" placeholder="Email" required="required">
+					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn_forgot" class="btn btn-primary">Kirim</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.modal-forgot-password -->
 
 <!-- jQuery 3 -->
 <script src="<?php echo resource_url('/bower_components/jquery/dist/jquery.min.js');?>"></script>
@@ -92,11 +118,50 @@
 <!-- iCheck -->
 <script src="<?php echo resource_url('/assets/plugins/iCheck/icheck.min.js');?>"></script>
 <script>
+	function isEmpty(val){
+		return (val === undefined || val == null || val.length <= 0) ? true : false;
+	}
+	function throw_ajax(url, type, data, successT, errorT){
+		$.ajax({
+			type: type,
+			url: url,
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			dataType: 'JSON',
+			contentType:"application/json",
+			data: data,
+			success: successT,
+			error: errorT
+		});
+	}
+	function throw_ajax_err(jqXHR, textStatus, errorThrown){
+		console.log('ERRORS: ' + textStatus + ' - ' + errorThrown );
+	}
+	function send_forgot_password(param){
+		var url = '<?php echo base_url('backend/forgot-password'); ?>';
+		var type = 'POST';
+		var data = {
+			<?= $this->security->get_csrf_token_name(); ?> : "<?= $this->security->get_csrf_hash(); ?>",
+			param : param
+		};
+
+		var success = function (jqXHR) {
+			if(jqXHR.status === 0){
+				$('.modal-forgot-password').modal("hide");
+			}else{
+				$('.modal-forgot-password').modal("hide");
+			}
+		};
+		throw_ajax(url, type, data, success, throw_ajax_err);
+	}
 	$(function () {
 		$('input').iCheck({
 			checkboxClass: 'icheckbox_square-blue',
 			radioClass: 'iradio_square-blue',
 			increaseArea: '20%' /* optional */
+		});
+		$("#btn_forgot").on("click", function(e){
+			var acc_forgot = $('input[name="email_forgot"]').val();
+			send_forgot_password(acc_forgot);
 		});
 	});
 </script>
