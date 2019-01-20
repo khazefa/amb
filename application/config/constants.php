@@ -91,7 +91,7 @@ defined('SHOW_CAPTCHA') OR define('SHOW_CAPTCHA', TRUE);
 define('PASS_LIMIT_EXPIRES',90); //programmatically count by days
 define('PASS_LIMIT_REMINDER',7); //programmatically count by days
 
-define('APP_NAME','AMB System');
+define('APP_NAME','AMB');
 define('EMAIL_FROM',                            'mymaildumpp@gmail.com');		// e.g. email@example.com
 define('FROM_NAME',                             'AMB System');	// Your system name
 define('EMAIL_PASS',                            '#Mymaildumpp11');	// Your email password
