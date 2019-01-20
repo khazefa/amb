@@ -90,3 +90,14 @@ defined('SHOW_CAPTCHA') OR define('SHOW_CAPTCHA', TRUE);
 
 define('PASS_LIMIT_EXPIRES',90); //programmatically count by days
 define('PASS_LIMIT_REMINDER',7); //programmatically count by days
+
+define('APP_NAME','AMB System');
+define('EMAIL_FROM',                            'mymaildumpp@gmail.com');		// e.g. email@example.com
+define('FROM_NAME',                             'AMB System');	// Your system name
+define('EMAIL_PASS',                            '#Mymaildumpp11');	// Your email password
+define('PROTOCOL',                             	'smtp');				// mail, sendmail, smtp
+define('SMTP_HOST',                             'ssl://smtp.googlemail.com');		// your smtp host e.g. smtp.gmail.com
+define('SMTP_PORT',                             465);				// your smtp port e.g. 25, 587
+define('SMTP_USER',                             'mymaildumpp@gmail.com');		// your smtp user
+define('SMTP_PASS',                             '#Mymaildumpp11');	// your smtp password
+define('MAIL_PATH',                             '/usr/sbin/sendmail');
