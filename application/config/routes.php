@@ -72,11 +72,23 @@ $route['backend']['post'] = function() {
 	return 'backend/signin/check';
 };
 //forgot password
-$route['backend/forgot-password']['post'] = function() {
+$route['backend/forgot-password']['POST'] = function() {
 	return 'backend/signin/forgot_password';
 };
+//confirm reset password
+//$route['backend/reset-password/(:any)/(:any)'] = 'backend/signin/reset_pass_confirm/$1/$2';
+
+$route['backend/reset-password/(:any)/(:any)']['GET'] = function($activation, $email) {
+	return 'backend/signin/reset_pass_confirm/' . $activation . '/' .$email;
+};
+
+//change password
+$route['backend/change-password']['POST'] = function() {
+	return 'backend/signin/change_new_password';
+};
+
 //logout
-$route['backend/signout']['get'] = function() {
+$route['backend/signout']['GET'] = function() {
 	return 'backend/signin/signout';
 };
 //list posts
