@@ -12,7 +12,7 @@ $locallist = array(
 );
 
 if(!in_array($_SERVER['REMOTE_ADDR'], $locallist)){
-	define('master', "http://your_ip");
+	define('master', "http://your_ip_or_domain_name/");
 }else{
 	define('master', "http://localhost/amb/");
 }
@@ -22,6 +22,7 @@ $config['emailfrom']	= "AMB System";
 
 //Frontend Website
 $config['frontend'] = constant('master');
+$config['backend'] = constant('master')."/backend/";
 
 // User photo uploads directory -> use in User.php
 $config['uploads'] = constant('master').'uploads/';
