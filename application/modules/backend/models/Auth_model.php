@@ -8,11 +8,11 @@
 
 class Auth_model extends CI_Model
 {
-	protected $pTbl = "users";
-	protected $pKey = "user_id";
-	protected $uKey = "user_key";
+	protected $pTbl = "admin";
+	protected $pKey = "adminname";
+	protected $uKey = "adminname";
 
-	protected $sTbl = "user_group";
+	protected $sTbl = "group";
 	protected $sKey = "group_id";
 
 	/**
@@ -70,4 +70,40 @@ class Auth_model extends CI_Model
 			return array();
 		}
 	}
+
+	/**
+	 * This function used to check email exists or not
+	 * @param {string} $email : This is users email id
+	 * @return {boolean} $result : TRUE/FALSE
+	 */
+	function check_email_exist($email)
+	{
+		$this->db->select('adminemail');
+		$this->db->where('adminemail', $email);
+		$this->db->where('adminactivated', 1);
+		$query = $this->db->get('admin');
+
+		if ($query->num_rows() > 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * This function used to insert reset password data
+	 * @param {array} $data : This is reset password data
+	 * @return {boolean} $result : TRUE/FALSE
+	 */
+	function reset_password_user($data)
+	{
+		$result = $this->db->insert('reset_password', $data);
+
+		if($result) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
 }
