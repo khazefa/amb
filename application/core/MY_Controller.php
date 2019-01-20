@@ -17,24 +17,24 @@ class MY_Controller extends MX_Controller
 	/**
 	 * Layouting for frontend
 	 */
-	public function digiLayout($data = [], $view = null)
+	public function digiLayout($data = [], $view = null, $headerInfo = NULL, $footerInfo = NULL)
 	{
-		$this->load->view('layouts/frontend/header', $data);
+		$this->load->view('layouts/frontend/header', $headerInfo);
 		if ($view) {
-			$this->load->view($view);
+			$this->load->view($view, $data);
 		}
-		$this->load->view('layouts/frontend/footer');
+		$this->load->view('layouts/frontend/footer', $footerInfo);
 	}
 	/**
 	 * Layouting for Backend
 	 */
-	public function digiAdminLayout($data = [], $view = null)
+	public function digiAdminLayout($data = [], $view = null, $headerInfo = NULL, $footerInfo = NULL)
 	{
-		$this->load->view('layouts/backend/header', $data);
+		$this->load->view('layouts/backend/header', $headerInfo);
 		if ($view) {
-			$this->load->view($view);
+			$this->load->view($view, $data);
 		}
-		$this->load->view('layouts/backend/footer');
+		$this->load->view('layouts/backend/footer', $footerInfo);
 	}
 	/**
 	 * Load a single View
