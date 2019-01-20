@@ -107,14 +107,14 @@ class Signin extends Front_Controller
 					$this->session->set_userdata($sessionArray);
 					redirect('/backend/dashboard');
 				}else{
-					$this->_login_fail("Incorrect username or Password");
+					$this->_login_fail("Nama Pengguna atau Kata Sandi yang Anda input tidak benar.");
 				}
 			} else {
-				$this->_login_fail("Please input username or Password");
+				$this->_login_fail("Harap input Nama Pengguna dan Kata Sandi Anda.");
 			}
 		} else {
 			// Captcha validation failed, return an error message
-			$this->_login_fail("CAPTCHA validation failed, please try again.");
+			$this->_login_fail("Validasi CAPTCHA Gagal, harap mencoba kembali.");
 		}
 	}
 
