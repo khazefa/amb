@@ -66,13 +66,13 @@
 	function throw_ajax_err(jqXHR, textStatus, errorThrown){
 		console.log('ERRORS: ' + textStatus + ' - ' + errorThrown );
 	}
-	function send_change_password(){
+	function send_change_password(pass){
 		var url = '<?php echo base_url('backend/useradmin/change_new_password'); ?>';
 		var type = 'POST';
 		var data = {
 		<?=
 			$this->security->get_csrf_token_name(); ?> : "<?= $this->security->get_csrf_hash(); ?>",
-			param : $('input[name="change_pass"]').val()
+			param : pass
 		};
 
 		var success = function (jqXHR) {
@@ -90,7 +90,13 @@
 	$(document).ready(function () {
 		$('.sidebar-menu').tree();
 		$("#btn_change_pass").on("click", function(e){
-			send_change_password();
+			var pass = $('input[name="change_pass"]');
+			if(isEmpty(pass.val())){
+				alert('Harap mengisi Kata Sandi baru Anda.');
+				pass.focus();
+			}else{
+				send_change_password(pass.val());
+			}
 		});
 	})
 </script>
