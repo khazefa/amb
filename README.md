@@ -6,5 +6,5 @@ Web Kliping Digital
 	<li>PHP version >= 7.3</li>
 	<li>Database MySQL or MariaDB</li>
 	<li>Admin LTE Theme</li>
-	<li>This project is using library BOTDetect CAPTCHA, Enabling SQLite3 to make this library running smoothly.</li>
+	<li>This project is using library Google Re-CAPTCHA, must be deployed in online hosting to enable this feature.</li>
 </ul>
