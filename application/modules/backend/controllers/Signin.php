@@ -94,6 +94,7 @@ class Signin extends Front_Controller
 					foreach ($result as $res)
 					{
 						$sessionArray = array(
+							'accBid' => $res->adminID,
 							'accKey' => $res->adminname,
 							'accEmail' => $res->adminemail,
 							'accName' => $res->adminrealname,

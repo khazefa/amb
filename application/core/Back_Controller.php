@@ -8,6 +8,7 @@
 
 class Back_Controller extends MY_Controller
 {
+	protected $accBid = '';
 	protected $accKey = '';
 	protected $accEmail = '';
 	protected $accName = '';
@@ -54,6 +55,7 @@ class Back_Controller extends MY_Controller
 		if (! isset ( $isSessionFilled ) || $isSessionFilled != TRUE) {
 			redirect ( '/backend' );
 		} else {
+			$this->accBid = $this->session->userdata ( 'accBid' );
 			$this->accKey = $this->session->userdata ( 'accKey' );
 			$this->accName = $this->session->userdata ( 'accName' );
 			$this->accEmail = $this->session->userdata ( 'accEmail' );
@@ -68,4 +70,26 @@ class Back_Controller extends MY_Controller
 			$this->global ['role'] = $this->accRole;
 		}
 	}
+
+	/**
+     * This function is used to check the access
+     */
+    function isCMSAdmin() {
+        if ($this->accType === "CMS") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    /**
+     * This function is used to check the access
+     */
+    function isWebAdmin() {
+        if ($this->accType === "Website") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

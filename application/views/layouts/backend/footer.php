@@ -35,19 +35,33 @@
 </div>
 <!-- /.modal-forgot-password -->
 
-<!-- jQuery 3 -->
-<script src="<?php echo resource_url('/bower_components/jquery/dist/jquery.min.js');?>"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo resource_url('/bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
+<!-- DataTables -->
+<script src="<?php echo resource_url('/bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+<script src="<?php echo resource_url('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
+<!-- DataTables Buttons -->
+<script src="<?php echo resource_url('/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js');?>"></script>
+<script src="<?php echo resource_url('/bower_components/datatables.net-buttons/js/buttons.html5.min.js');?>"></script>
+<script src="<?php echo resource_url('/bower_components/datatables.net-buttons/js/buttons.print.min.js');?>"></script>
+<!-- DataTables Responsive -->
+<script src="<?php echo resource_url('/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js');?>"></script>
+<!-- JSZip -->
+<script src="<?php echo resource_url('/bower_components/jszip/dist/jszip.min.js');?>"></script>
+<!-- PDF Make -->
+<script src="<?php echo resource_url('/bower_components/pdfmake/build/vfs_fonts.js');?>"></script>
+<script src="<?php echo resource_url('/bower_components/pdfmake/build/pdfmake.min.js');?>"></script>
 <!-- SlimScroll -->
 <script src="<?php echo resource_url('/bower_components/jquery-slimscroll/jquery.slimscroll.min.js');?>"></script>
 <!-- FastClick -->
 <script src="<?php echo resource_url('/bower_components/fastclick/lib/fastclick.js');?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo resource_url('/assets/js/adminlte.min.js');?>"></script>
+
+<!-- Bootstrap Select -->
+<script src="<?php echo resource_url('/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js');?>"></script>
+
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo resource_url('/assets/js/demo.js');?>"></script>
-<script>
+<!-- <script src="<?php echo resource_url('/assets/js/demo.js');?>"></script> -->
+<script type="text/javascript">
 	function isEmpty(val){
 		return (val === undefined || val == null || val.length <= 0) ? true : false;
 	}

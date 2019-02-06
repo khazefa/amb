@@ -499,4 +499,24 @@ if ( ! function_exists('is_localhost'))
 	}
 }
 
+if ( ! function_exists('modul_parent_name'))
+{
+	function module_parent_name($table,$field,$field_value){
+		$ci = get_instance();
+		$textValue = "";
+		if($field_value === "0"){
+			$name = "Main Module";
+		}else{
+			$row = $ci->db->get_where($table, array($field => $field_value))->row();
+			$name = $row->mod_name;
+			// $name = $ci->db->select($value)
+			// 		  ->get_where($table, array($field => $field_value))
+			// 		  ->row()
+			// 		  ->mod_name;
+		}
+		$textValue = $name;
+		return $textValue;  
+	}
+}
+
 ?>

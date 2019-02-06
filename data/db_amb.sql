@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Jan 23, 2019 at 04:43 PM
+-- Host: localhost:3306
+-- Generation Time: Feb 06, 2019 at 01:04 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -47,7 +47,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminID`, `adminname`, `adminrealname`, `adminpassword`, `adminemail`, `adminkat`, `admintipe`, `admingroup`, `adminrole`, `admindropped`, `adminactivated`, `updated`, `user_media`) VALUES
-(1, 'galandro', 'Galih Tirta', '7e60bc642fefc11b43792e8745df6c1d', 'galandrocyber@gmail.com', NULL, 'CMS', '', 'admin,adminwebsite,menusub,menucat,kategori,media,bidang,wilayah,tonality,ukuran,warna,tujuan,opini,suratpembaca,scanning,analisascanning,analiscetak,analisistemcetak,sinopsiscetak,tv,online,analistv,periodiktv,sinopsistv,analisol,periodikol,sinopsisol,galeri,flipbook,isudominan,laporan,laptonality', 0, 1, '0000-00-00 00:00:00', ''),
+(1, 'galandro', 'Galih Tirta', '7e60bc642fefc11b43792e8745df6c1d', 'galandrocyber@gmail.com', NULL, 'CMS', '', 'admin,adminwebsite,menusub,menucat,kategori,media,bidang,wilayah,tonality,ukuran,warna,tujuan,opini,suratpembaca,scanning,analisascanning,analiscetak,analisistemcetak,sinopsiscetak,tv,online,analistv,periodiktv,sinopsistv,analisol,periodikol,sinopsisol,galeri,flipbook,isudominan,laporan,laptonality,setting-module,setup-admin,setup-website', 0, 1, '2019-01-30 21:04:18', ''),
 (7, 'ikauntari', 'Ika Meilani Untari', '5497024debf33225daf3cced2725a64f', '', NULL, 'CMS', '', 'admin,adminwebsite,change,kategori,media,bidang,wilayah,tonality,ukuran,warna,tujuan,opini,suratpembaca,scanning,analisascanning,analisaperiodik,analisaharian,edittone,laporan,laptonality', 0, 1, '2015-11-06 02:42:15', ''),
 (5, 'ikauntari', 'Ika Meilani Untari', '5497024debf33225daf3cced2725a64f', '', '', 'Website', '', 'kirimkomentar,tampilkomentar,analisaberita,arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2015-11-06 02:39:11', ''),
 (6, 'iman', 'Iman Maulana', '9ccaf4e36bb19bd8beab2a1e8f1731cf', 'iman@imanmaulana.com', NULL, 'Website', '', 'tampilkomentar,analisaberita,arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2015-05-05 06:55:01', ''),
@@ -775,7 +775,7 @@ INSERT INTO `admin` (`adminID`, `adminname`, `adminrealname`, `adminpassword`, `
 (748, 'biroperekonomian', 'Biro Perekonomian Setda Provinsi DKI Jakarta', 'c81c35880bdf43350b068d0a815e5340', 'biroperekonomian', '03082016085642', 'Website', '', 'arsipberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:27:47', ''),
 (750, 'diskukmp', 'Dinas Koperasi Usaha Mikro, Kecil, Menengah dan Perdagangan Provinsi DKI Ja', 'e362d1665d0b1b42cb07fae41fbc8991', 'diskukmp', '20150220092121', 'Website', '', 'arsipberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:43:44', ''),
 (751, 'kpkip', 'kpkip', '6b5e36a86e4ae9dda3e34000fdde20c1', 'kpkip', '', 'Website', '', 'totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2016-09-22 01:37:19', ''),
-(752, 'venny', 'venny', '9b7339300ff201f5399f9f6c98896a3c', 'venny', '', 'Website', '', 'totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2016-09-22 02:24:21', ''),
+(752, 'venny', 'venny', '9b7339300ff201f5399f9f6c98896a3c', 'venny', '20150220091752', 'Website', '', 'totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2019-02-05 09:15:37', ''),
 (753, 'komisionerkip', 'Komisioner KIP', '59798938c5783c006cce6f8cc5471a15', 'komisionerkip', '', 'Website', '', 'totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2016-09-22 02:28:01', ''),
 (754, 'komisionerkpid', 'Komisioner KPID', 'faac3f8cc72f5d3a3f2ae4638f42cdc6', 'komisionerkpid', '', 'Website', '', 'totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2016-09-22 02:26:19', ''),
 (755, 'soni', 'Soni', '239c81f9f49ce3ae4d8d99e508c90abe', '', '', 'Website', '', '', 0, 1, '2016-10-28 08:53:47', ''),
@@ -785,7 +785,10 @@ INSERT INTO `admin` (`adminID`, `adminname`, `adminrealname`, `adminpassword`, `
 (759, 'ferry rende', 'ferry rende', '3e8f58918f681ece4816a547a117bebc', 'ferry', '', 'Website', '', 'arsipberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2016-11-22 01:57:01', ''),
 (766, 'disppapp', 'Dinas Pemberdayaan, Perlindungan Anak dan Pengendalian Penduduk', '18ac6b6fca1d7a714d618db06cd82714', 'disppapp', '20150220092724', 'Website', '', 'arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:39:50', ''),
 (767, 'dispusip', 'Dinas Perpustakaan dan Kearsipan Daerah', 'cfcaa3ae31b659292dc5b598250ca990', 'dispusip', '20150220092745', 'Website', '', 'arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:47:13', ''),
-(768, 'bprd', 'Badan Pajak dan Retribusi Daerah', 'a6e9bbf349424175cb780b204ae96917', 'bprd', '28072016135604', 'Website', '', 'arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:55:07', '');
+(768, 'bprd', 'Badan Pajak dan Retribusi Daerah', 'a6e9bbf349424175cb780b204ae96917', 'bprd', '28072016135604', 'Website', '', 'arsipberita,databaseberita,totalberita,nadaberita,bidangberita,narasumberberita', 0, 1, '2017-05-31 00:55:07', ''),
+(770, 'test1', 'Test 1', '5a105e8b9d40e1329780d62ea2265d8a', 'test1@gmail.com', '20150220091752', 'Website', '', '', 0, 1, '2019-02-05 09:16:16', ''),
+(771, 'test2', 'Test 2', 'ad0234829205b9033196ba818f7a872b', 'test2@gmail.com', '', 'CMS', '', '', 0, 1, '2019-02-03 10:03:13', ''),
+(772, 'test3', 'Test 3', '8ad8757baa8564dc136c1e07507f4a98', 'test3@gmail.com', '03082016085642', 'Website', '', '', 0, 1, '2019-02-06 01:01:14', '');
 
 -- --------------------------------------------------------
 
@@ -855,17 +858,11 @@ INSERT INTO `bidangartikel` (`bidangID`, `bidangcode`, `bidangsubcode`, `bidangd
 (21, '20150220091567', '20150220092142', '2016-08-03 11:25:14', 'Perekonomian dan Keuangan', 'DINAS PERINDUSTRIAN DAN ENERGI', 1, 0, NULL),
 (22, '20150220091567', '20150220092202', '2017-01-06 16:21:08', 'Perekonomian dan Keuangan', 'DINAS KETAHANAN PANGAN, KELAUTAN, DAN PERTANIAN', 1, 0, NULL),
 (23, '20150220091567', '20150220092220', '2016-08-03 11:23:56', 'Perekonomian dan Keuangan', 'DINAS PARIWISATA DAN KEBUDAYAAN', 1, 0, NULL),
-(25, '20150220091641', '20150220092401', '2016-08-02 10:31:16', 'Pembangunan dan Lingkungan Hidup', 'DINAS BINA MARGA', 1, 0, NULL),
-(26, '20150220091641', '20150220092421', '2017-01-06 16:16:20', 'Pembangunan dan Lingkungan Hidup', 'DINAS PERUMAHAN RAKYAT DAN KAWASAN PERMUKIMAN', 1, 0, NULL),
+(25, '20150220091641', '20190203103651', '2016-08-02 10:31:16', 'Pembangunan dan Lingkungan Hidup', 'DINAS BINA MARGA', 1, 0, 'pembangunan-dan-lingkungan-hidup'),
+(26, '20150220091641', '20190203103703', '2017-01-06 16:16:20', 'Pembangunan dan Lingkungan Hidup', 'DINAS PERUMAHAN RAKYAT DAN KAWASAN PERMUKIMAN', 1, 0, 'pembangunan-dan-lingkungan-hidup'),
 (27, '20150220091641', '20150220092446', '2017-01-06 16:27:45', 'Pembangunan dan Lingkungan Hidup', 'DINAS KEHUTANAN', 1, 0, NULL),
 (28, '20150220091641', '20150220092511', '2017-01-06 16:22:59', 'Pembangunan dan Lingkungan Hidup', 'DINAS LINGKUNGAN HIDUP DAN KEBERSIHAN', 1, 0, NULL),
 (29, '20150220091641', '20150220092534', '2017-01-06 16:22:13', 'Pembangunan dan Lingkungan Hidup', 'DINAS LINGKUNGAN HIDUP DAN KEBERSIHAN', 1, 0, NULL),
-(30, '20150220091610', '20150220092605', '2016-07-28 13:39:41', 'Kesejahteraan Rakyat', 'DINAS SOSIAL', 1, 0, NULL),
-(31, '20150220091610', '20150220092621', '2016-07-28 13:38:06', 'Kesejahteraan Rakyat', 'DINAS PENDIDIKAN', 1, 0, NULL),
-(32, '20150220091610', '20150220092638', '2016-07-28 13:37:15', 'Kesejahteraan Rakyat', 'DINAS KESEHATAN', 1, 0, NULL),
-(33, '20150220091610', '20150220092658', '2017-01-06 16:27:02', 'Kesejahteraan Rakyat', 'DINAS PEMUDA DAN OLAHRAGA', 1, 0, NULL),
-(34, '20150220091610', '20150220092724', '2017-01-06 16:20:06', 'Kesejahteraan Rakyat', 'DINAS PEMBERDAYAAN, PERLINDUNGAN ANAK DAN PENGENDALIAN PENDUDUK', 1, 0, NULL),
-(35, '20150220091610', '20150220092745', '2016-07-28 13:38:40', 'Kesejahteraan Rakyat', 'BADAN PERPUSTAKAAN DAN ARSIP DAERAH', 1, 0, NULL),
 (49, '20150302111533', '02032015111616', '2015-03-02 11:16:16', 'Wilayah', 'SUKU DINAS', 0, 0, NULL),
 (44, '20150220091641', '02032015073744', '2017-01-06 16:13:51', 'Pembangunan dan Lingkungan Hidup', 'DINAS SUMBER DAYA AIR', 1, 0, NULL),
 (47, '20150302111533', '02032015111545', '2015-03-02 11:16:26', 'Wilayah', 'CAMAT', 0, 0, NULL),
@@ -890,14 +887,11 @@ INSERT INTO `bidangartikel` (`bidangID`, `bidangcode`, `bidangsubcode`, `bidangd
 (64, '20150213131501', '28072016140032', '2017-01-06 16:32:47', 'Pemerintahan', 'BADAN KEPEGAWAIAN DAERAH', 1, 0, NULL),
 (65, '20150220091641', '28072016140126', '2017-01-06 16:14:55', 'Pembangunan dan Lingkungan Hidup', 'DINAS CIPTA KARYA, TATA RUANG, DAN PERTANAHAN', 1, 0, NULL),
 (66, '20150220091641', '28072016140150', '2016-08-02 10:28:58', 'Pembangunan dan Lingkungan Hidup', 'KANTOR PENGELOLA TAMAN MARGA SATWA RAGUNAN', 1, 0, NULL),
-(67, '20150220091610', '28072016140222', '2016-07-28 14:02:22', 'Kesejahteraan Rakyat', 'RSUD', 1, 0, NULL),
-(68, '20150220091610', '28072016140247', '2016-07-28 14:02:47', 'Kesejahteraan Rakyat', 'RSKD', 1, 0, NULL),
 (70, '20150220091567', '02082016102608', '2016-08-02 10:26:08', 'Perekonomian dan Keuangan', 'BIRO UMUM', 1, 0, NULL),
 (71, '20150213131501', '02082016102635', '2016-08-02 10:26:35', 'Pemerintahan', 'INSPEKTORAT', 1, 0, NULL),
 (72, '20150213131501', '02082016102744', '2016-08-02 10:27:44', 'Pemerintahan', 'BADAN PERENCANAAN PEMBANGUNAN DAERAH', 1, 0, NULL),
 (73, '20150220091641', '02082016102817', '2016-08-02 10:28:17', 'Pembangunan dan Lingkungan Hidup', 'BIRO PENATAAN KOTA DAN LINGKUNGAN HIDUP', 1, 0, NULL),
-(74, '20150220091610', '02082016102923', '2016-08-02 10:29:23', 'Kesejahteraan Rakyat', 'BIRO KESEJAHTERAAN SOSIAL', 1, 0, NULL),
-(75, '20150220091610', '02082016102948', '2016-08-02 10:29:48', 'Kesejahteraan Rakyat', 'BIRO PENDIDIKAN DAN MENTAL SPIRITUAL', 1, 0, NULL),
+(75, '20150220091610', '20190203102852', '2016-08-02 10:29:48', 'Kesejahteraan Rakyat', 'DINAS SOSIAL', 1, 0, 'kesejahteraan-rakyat'),
 (77, '20150220091567', '03082016085642', '2016-08-03 10:02:46', 'Perekonomian dan Keuangan', 'BIRO PEREKONOMIAN', 1, 0, NULL);
 
 -- --------------------------------------------------------
@@ -921,12 +915,12 @@ CREATE TABLE `kategoriartikel` (
 --
 
 INSERT INTO `kategoriartikel` (`kategoriID`, `kategoricode`, `kategoridatecreated`, `kategorititle`, `kategoripublished`, `priory`, `kategoriurl`) VALUES
-(11, '20150226082755', '2015-02-26 08:27:55', 'Berita Foto', 1, 0, NULL),
-(6, '20150129100941', '2015-02-20 11:34:37', 'Artikel', 1, 0, NULL),
-(7, '20150213131413', '2015-02-13 13:14:13', 'Opini', 1, 0, NULL),
-(10, '20150224115405', '2015-02-24 11:54:05', 'Surat Pembaca', 1, 0, NULL),
-(9, '20150224115159', '2015-02-24 11:51:59', 'Berita', 1, 0, NULL),
-(12, '20150611223415', '2015-06-11 22:34:15', 'Tajuk Rencana', 1, 0, NULL);
+(11, '20150226082755', '2015-02-26 08:27:55', 'Berita Foto', 1, 0, 'berita-foto'),
+(6, '20150129100941', '2015-02-20 11:34:37', 'Artikel', 1, 0, 'artikel'),
+(7, '20150213131413', '2015-02-13 13:14:13', 'Opini', 1, 0, 'opini'),
+(10, '20150224115405', '2015-02-24 11:54:05', 'Surat Pembaca', 1, 0, 'surat-pembaca'),
+(9, '20150224115159', '2015-02-24 11:51:59', 'Berita', 1, 0, 'berita'),
+(12, '20150611223415', '2015-06-11 22:34:15', 'Tajuk Rencana', 1, 0, 'tajuk-rencana');
 
 -- --------------------------------------------------------
 
@@ -950,7 +944,7 @@ CREATE TABLE `mediaartikel` (
 --
 
 INSERT INTO `mediaartikel` (`mediaID`, `mediacode`, `mediadatecreated`, `mediatitle`, `mediatipe`, `mediapublished`, `priory`, `mediaurl`) VALUES
-(5, '20150129115258', '2015-01-29 11:52:58', 'Media Indonesia', 'Media Cetak', 1, 0, NULL),
+(5, '20150129115258', '2015-01-29 11:52:58', 'Media Indonesia', 'Media Cetak', 1, 0, 'media-indonesia'),
 (7, '20150205122502', '2015-02-05 12:25:02', 'Jawa Pos', 'Media Cetak', 1, 0, NULL),
 (8, '20150205122529', '2015-02-05 12:25:29', 'Rakyat Merdeka', 'Media Cetak', 1, 0, NULL),
 (9, '20150205122549', '2015-02-05 12:25:49', 'Republika', 'Media Cetak', 1, 0, NULL),
@@ -968,9 +962,82 @@ INSERT INTO `mediaartikel` (`mediaID`, `mediacode`, `mediadatecreated`, `mediati
 (22, '20150223101651', '2016-08-31 13:04:09', 'Sinar Harapan', 'Media Cetak', 0, 0, NULL),
 (23, '20150223133420', '2015-02-23 13:34:20', 'Suara Pembaruan', 'Media Cetak', 1, 0, NULL),
 (24, '20150225072819', '2015-06-11 22:36:56', 'GATRA (Majalah)', 'Media Cetak', 1, 0, NULL),
-(25, '20150225111524', '2015-03-05 10:23:48', 'TEMPO (Majalah)', 'Media Cetak', 1, 0, NULL),
-(26, '20150305102939', '2015-03-05 10:29:39', 'Kompas ', 'Media Cetak', 1, 0, NULL),
-(27, '20150611223518', '2015-06-11 22:35:18', 'Harian Pelita', 'Media Cetak', 1, 0, NULL);
+(25, '20150225111524', '2015-03-05 10:23:48', 'TEMPO (Majalah)', 'Media Cetak', 1, 0, 'tempo-majalah'),
+(26, '20150305102939', '2015-03-05 10:29:39', 'Kompas', 'Media Cetak', 1, 0, 'kompas'),
+(27, '20150611223518', '2015-06-11 22:35:18', 'Harian Pelita', 'Media Cetak', 1, 0, 'harian-pelita');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `module`
+--
+
+CREATE TABLE `module` (
+  `mod_id` int(11) NOT NULL,
+  `mod_name` varchar(75) NOT NULL,
+  `mod_slug` varchar(100) NOT NULL,
+  `mod_icon` varchar(50) NOT NULL,
+  `mod_active` int(1) NOT NULL,
+  `mod_has_parent` int(1) NOT NULL,
+  `mod_sort` int(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `module`
+--
+
+INSERT INTO `module` (`mod_id`, `mod_name`, `mod_slug`, `mod_icon`, `mod_active`, `mod_has_parent`, `mod_sort`) VALUES
+(1, 'Pengaturan Modul', 'setting-module', 'fa fa-list-alt', 1, 5, 0),
+(5, 'Setup Admin', 'setup-admin', 'fa fa-envira', 1, 0, 2),
+(6, 'Admin Website', 'admin-website', 'fa fa-users', 1, 5, 0),
+(7, 'Admin CMS', 'admin-cms', 'fa fa-user-circle', 1, 5, 0),
+(8, 'Setup Website', 'setup-website', 'fa fa-globe', 1, 0, 1),
+(9, 'Kategori', 'kategori', 'fa fa-th-list', 1, 8, 0),
+(10, 'Media', 'media', 'fa fa-newspaper-o', 1, 8, 0),
+(11, 'Wilayah', 'wilayah', 'fa fa-globe', 1, 8, 0),
+(12, 'Bidang', 'bidang', 'fa fa-th-list', 1, 8, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `module_rights`
+--
+
+CREATE TABLE `module_rights` (
+  `modr_id` int(11) NOT NULL,
+  `adminID` int(4) NOT NULL,
+  `modr_rights` int(1) NOT NULL,
+  `modr_active` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `module_rights`
+--
+
+INSERT INTO `module_rights` (`modr_id`, `adminID`, `modr_rights`, `modr_active`) VALUES
+(1, 1, 1, 1),
+(6, 1, 5, 1),
+(7, 1, 7, 1),
+(8, 1, 6, 1),
+(9, 1, 8, 1),
+(28, 1, 9, 1),
+(29, 664, 7, 1),
+(30, 664, 6, 1),
+(31, 664, 9, 1),
+(32, 664, 1, 1),
+(33, 664, 5, 1),
+(34, 664, 8, 1),
+(35, 770, 8, 1),
+(36, 770, 9, 1),
+(37, 1, 10, 1),
+(38, 1, 12, 1),
+(39, 1, 11, 1),
+(41, 1, 15, 1),
+(42, 772, 12, 1),
+(43, 772, 9, 1),
+(44, 772, 10, 1),
+(45, 772, 8, 1),
+(46, 772, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -1000,21 +1067,22 @@ CREATE TABLE `wilayahartikel` (
   `wilayahdatecreated` datetime DEFAULT NULL,
   `wilayahtitle` varchar(150) NOT NULL,
   `wilayahpublished` tinyint(1) DEFAULT '0',
-  `priory` int(11) DEFAULT '0'
+  `priory` int(11) DEFAULT '0',
+  `wilayahurl` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `wilayahartikel`
 --
 
-INSERT INTO `wilayahartikel` (`wilayahID`, `wilayahcode`, `wilayahdatecreated`, `wilayahtitle`, `wilayahpublished`, `priory`) VALUES
-(4, '20150129103705', '2015-01-29 10:37:05', 'Jakarta Selatan', 1, 0),
-(3, '20150129103659', '2015-01-29 10:36:59', 'Jakarta Barat', 1, 0),
-(2, '20150129103711', '2015-01-29 10:37:11', 'Jakarta Utara', 1, 0),
-(5, '20150218105115', '2015-02-18 10:51:15', 'Jakarta Timur', 1, 0),
-(1, '20150218105127', '2015-02-18 10:51:27', 'Jakarta Pusat', 1, 0),
-(6, '20150220125407', '2015-02-20 12:54:07', 'Kepulauan Seribu', 1, 0),
-(9, '20160628060052', '2016-06-28 06:00:52', 'Non Wilayah', 1, 0);
+INSERT INTO `wilayahartikel` (`wilayahID`, `wilayahcode`, `wilayahdatecreated`, `wilayahtitle`, `wilayahpublished`, `priory`, `wilayahurl`) VALUES
+(4, '20150129103705', '2015-01-29 10:37:05', 'Jakarta Selatan', 1, 0, 'jakarta-selatan'),
+(3, '20150129103659', '2015-01-29 10:36:59', 'Jakarta Barat', 1, 0, 'jakarta-barat'),
+(2, '20150129103711', '2015-01-29 10:37:11', 'Jakarta Utara', 1, 0, 'jakarta-utara'),
+(5, '20150218105115', '2015-02-18 10:51:15', 'Jakarta Timur', 1, 0, 'jakarta-timur'),
+(1, '20150218105127', '2015-02-18 10:51:27', 'Jakarta Pusat', 1, 0, 'jakarta-pusat'),
+(6, '20150220125407', '2015-02-20 12:54:07', 'Kepulauan Seribu', 1, 0, 'kepulauan-seribu'),
+(9, '20160628060052', '2016-06-28 06:00:52', 'Non Wilayah', 1, 0, 'non-wilayah');
 
 --
 -- Indexes for dumped tables
@@ -1051,6 +1119,18 @@ ALTER TABLE `mediaartikel`
   ADD PRIMARY KEY (`mediaID`);
 
 --
+-- Indexes for table `module`
+--
+ALTER TABLE `module`
+  ADD PRIMARY KEY (`mod_id`);
+
+--
+-- Indexes for table `module_rights`
+--
+ALTER TABLE `module_rights`
+  ADD PRIMARY KEY (`modr_id`);
+
+--
 -- Indexes for table `reset_password`
 --
 ALTER TABLE `reset_password`
@@ -1071,7 +1151,7 @@ ALTER TABLE `wilayahartikel`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=769;
+  MODIFY `adminID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=773;
 
 --
 -- AUTO_INCREMENT for table `admincontent`
@@ -1089,13 +1169,25 @@ ALTER TABLE `bidangartikel`
 -- AUTO_INCREMENT for table `kategoriartikel`
 --
 ALTER TABLE `kategoriartikel`
-  MODIFY `kategoriID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `kategoriID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mediaartikel`
 --
 ALTER TABLE `mediaartikel`
   MODIFY `mediaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `module`
+--
+ALTER TABLE `module`
+  MODIFY `mod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `module_rights`
+--
+ALTER TABLE `module_rights`
+  MODIFY `modr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `reset_password`

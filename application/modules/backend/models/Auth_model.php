@@ -22,10 +22,11 @@ class Auth_model extends CI_Model
 	 */
 	function auth_default($username, $password)
 	{
-		$this->db->select('a.adminname, a.adminpassword, a.adminrealname, a.adminemail, a.admintipe, a.admingroup, a.adminrole');
+		$this->db->select('a.adminID, a.adminname, a.adminpassword, a.adminrealname, a.adminemail, a.adminkat, a.admintipe, a.admingroup, a.adminrole');
 		$this->db->from('admin as a');
 //		$this->db->join('group as g','g.group_id = a.group_id');
 		$this->db->where('a.adminname', $username);
+		$this->db->where('a.admintipe', 'CMS');
 		$this->db->where('a.adminactivated', 1);
 		$query = $this->db->get();
 
